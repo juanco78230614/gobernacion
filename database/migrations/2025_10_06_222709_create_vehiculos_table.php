@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration {
     public function up(): void {
         Schema::create('VEHICULOS', function (Blueprint $table) {
-            $table->unsignedBigInteger('ID_VEHICULO')->primary();
+            $table->id('ID_VEHICULO');
             $table->string('PLACA', 100)->nullable();
             $table->string('MOTOR', 100)->nullable();
             $table->string('CHASIS', 100)->nullable();

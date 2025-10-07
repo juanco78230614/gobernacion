@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration {
     public function up(): void {
         Schema::create('OPERADORES', function (Blueprint $table) {
-            $table->unsignedBigInteger('ID_OPERADOR')->primary();
+            $table->id('ID_OPERADOR');
             $table->string('RAZON_SOCIAL', 600)->nullable();
             $table->unsignedBigInteger('NRO_REGISTRO')->nullable();
             $table->unsignedBigInteger('NIT')->nullable();

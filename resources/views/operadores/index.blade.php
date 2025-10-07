@@ -9,12 +9,13 @@
         <div class="alert alert-success">{{ session('success') }}</div>
     @endif
 
-    <table class="table table-striped">
+    <table class="table table-bordered">
         <thead>
             <tr>
                 <th>Razón Social</th>
                 <th>NIT</th>
                 <th>Modalidad</th>
+                <th>Servicio</th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -24,9 +25,10 @@
                     <td>{{ $op->RAZON_SOCIAL }}</td>
                     <td>{{ $op->NIT }}</td>
                     <td>{{ $op->MODALIDAD }}</td>
+                    <td>{{ $op->SERVICIO }}</td>
                     <td>
-                        <a href="{{ route('operadores.edit', $op) }}" class="btn btn-sm btn-warning">Editar</a>
-                        <form action="{{ route('operadores.destroy', $op) }}" method="POST" style="display:inline;">
+                        <a href="{{ route('operadores.edit', $op->ID_OPERADOR) }}" class="btn btn-sm btn-warning">Editar</a>
+                        <form action="{{ route('operadores.destroy', $op->ID_OPERADOR) }}" method="POST" class="d-inline">
                             @csrf @method('DELETE')
                             <button class="btn btn-sm btn-danger" onclick="return confirm('¿Eliminar este operador?')">Eliminar</button>
                         </form>
